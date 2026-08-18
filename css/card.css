@@ -1,0 +1,93 @@
+
+.card {
+  background-color: #f1f4f5;
+  border: 1px solid var(--skin-color);
+  border-radius: 16px;
+  padding: 30px 24px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card .icon {
+  background-color: #f1f5f9;
+  color: var(--skin-color);
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  color: #0d1625;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.card ul {
+  list-style: none;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.card ul li {
+  font-size: 0.85rem;
+  color: var(--skin-color);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.card ul li::before {
+  content: "•";
+  color: var(--skin-color);
+}
+
+/* Botão dentro do card */
+.card .btn {
+  background-color: var(--skin-color);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estado ativo (hover ou selecionado via JS) */
+.card.active {
+  border-color: var(--skin-color);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+  transform: translateY(-8px);
+}
+
+.card.active .icon {
+  background-color: var(--skin-color);
+  color: #ffffff;
+}
+
+.card.active .btn {
+  opacity: 1;
+  transform: translateY(0);
+}

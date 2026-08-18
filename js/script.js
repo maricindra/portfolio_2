@@ -47,4 +47,16 @@ if (dayNight) {
       dayNight.querySelector("i").classList.add("fa-moon");
     }
   });
+
+  const cards = document.querySelectorAll('.card');
+
+cards.forEach((card) => {
+  card.addEventListener('mouseenter', () => {
+    // Remove a classe 'active' de todos os cards
+    cards.forEach((c) => c.classList.remove('active'));
+    
+    // Adiciona a classe 'active' apenas no card em que o mouse entrou
+    card.classList.add('active');
+  });
+});
 }
