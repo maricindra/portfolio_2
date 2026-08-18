@@ -12,8 +12,9 @@ if (styleSwitcherToggle) {
 
 // Fechar o painel ao rolar a página
 window.addEventListener("scroll", () => {
-  if (document.querySelector(".style-switcher").classList.contains("open")) {
-    document.querySelector(".style-switcher").classList.remove("open");
+  const switcher = document.querySelector(".style-switcher");
+  if (switcher && switcher.classList.contains("open")) {
+    switcher.classList.remove("open");
   }
 });
 
@@ -47,8 +48,10 @@ if (dayNight) {
       dayNight.querySelector("i").classList.add("fa-moon");
     }
   });
+}
 
-  const cards = document.querySelectorAll('.card');
+// 4. Efeito Hover nos Cards
+const cards = document.querySelectorAll('.card');
 
 cards.forEach((card) => {
   card.addEventListener('mouseenter', () => {
@@ -59,4 +62,3 @@ cards.forEach((card) => {
     card.classList.add('active');
   });
 });
-}
