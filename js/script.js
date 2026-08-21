@@ -50,6 +50,7 @@ if (dayNight) {
   });
 }
 
+
 // 4. Efeito Hover nos Cards
 const cards = document.querySelectorAll('.card');
 
