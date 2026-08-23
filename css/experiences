@@ -1,74 +1,222 @@
-selector {
+/* Container Principal */
+.s-slider {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 90vh;
+  min-height: 600px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
   overflow: hidden;
+}
+
+/* Fundo com Imagens Animadas */
+.s-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
 }
-/*Renderizando os Pontos do Slide*/
 
-selector {
-  --dot-size: 20px;
-  --line-color: rgba(255, 255, 255, 0.25);
-  --dot-color: rgba(255, 255, 255, 0.5);
-  --dot-color-active: rgba(255, 255, 255, 1);
-  
+.s-bg-image.active {
+  opacity: 1;
+}
+
+.s-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%);
+  z-index: 2;
+}
+
+/* Lado Esquerdo */
+.s-left-container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 50%;
+}
+
+/* Barra Vertical de Bolinhas (S-Bar) */
+.s-bar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  left: 5%;
-  z-index: 10;
+  height: 240px;
+  width: 20px;
+  position: relative;
 }
-selector .s-dot {
-  width: var(--dot-size);
-  height: var(--dot-size);
+
+.s-dot {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background-color: var(--dot-color);
+  background-color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-selector .s-dot.active {
-  background-color: var(--dot-color-active);
-  transform: scale(1.2);
+.s-dot.active {
+  background-color: #ffffff;
+  transform: scale(1.5);
 }
 
-/*Animação de transição dos slides*/
-selector {
+/* Animação dos Textos / Titulos / Botões (S-Changing-Widget) */
+.s-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+.s-changing-widget {
   position: relative;
 }
 
-selector > * {
+.s-changing-widget > * {
   display: none;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-selector > *.active {
+.s-changing-widget > *.active {
   display: block;
   opacity: 1;
   transform: translateY(0);
 }
 
+.s-titles h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
 
+.s-texts p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.5;
+}
 
-/*Carrosel / Slides*/
+.s-buttons .btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  width: max-content;
+  transition: background-color 0.3s ease;
+}
 
-selector {
+.s-buttons .btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Lado Direito: Swiper Slider */
+.s-right-container {
+  position: relative;
+  z-index: 3;
+  width: 45%;
+}
+
+.s-side-slider {
   width: 100%;
+  overflow: visible !important;
 }
 
-selector .swiper-slide {
+.s-side-slider .swiper-slide {
+  transition: transform 0.4s ease, opacity 0.4s ease;
   opacity: 0.5;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
 
-selector .swiper-slide-active {
+.s-side-slider .swiper-slide-active {
   opacity: 1;
   transform: scale(1.05);
+}
+
+.card-content {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  background: #1a1a1a;
+  aspect-ratio: 4/5;
+}
+
+.card-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content span {
+  position: absolute;
+  bottom: 45px;
+  left: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-content h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+/* Layout Responsivo (Mobile) */
+@media (max-width: 768px) {
+  .s-slider {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 80px 20px 40px;
+  }
+
+  .s-left-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .s-bar {
+    flex-direction: row;
+    width: 160px;
+    height: 20px;
+  }
+
+  .s-titles h1 {
+    font-size: 2.2rem;
+  }
+
+  .s-buttons .btn {
+    margin: 0 auto;
+  }
+
+  .s-right-container {
+    width: 100%;
+    margin-top: 30px;
+  }
 }
