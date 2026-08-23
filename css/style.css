@@ -1,3 +1,5 @@
+/*<!-- Configuração da pagina inteira / Modo Dark, Light e Mudança de cores-->*/
+
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 /* ==========================================================================
@@ -118,24 +120,7 @@ ul {
   margin-top: 8px;
 }
 
-/* Botões */
-.btn {
-  font-size: 16px;
-  font-weight: 500;
-  padding: 12px 35px;
-  color: #ffffff;
-  border-radius: 40px;
-  display: inline-block;
-  white-space: nowrap;
-  background: var(--skin-color);
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
 
-.btn:hover {
-  transform: scale(1.4);
-}
 
 /* ==========================================================================
    Barra Lateral (Aside)

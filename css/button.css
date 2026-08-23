@@ -1,0 +1,50 @@
+
+/* Magnetic Button Base */
+.magnetic-btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 50px;
+  border-radius: 50px;
+  border: 2px solid var(--skin-color);
+  color: var(--skin-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Text Styling */
+.btn-text {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+/* Liquid / Blob Effect */
+.blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+  background: var(--skin-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 1;
+}
+
+/* Hover States */
+.magnetic-btn:hover .blob {
+  width: 320px;
+  height: 320px;
+}
+
+.magnetic-btn:hover {
+  color: white;
+  box-shadow: 0 0 35px rgba(0, 153, 255, 0.7);
+}

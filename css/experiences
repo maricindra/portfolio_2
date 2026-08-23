@@ -1,0 +1,74 @@
+selector {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+/*Renderizando os Pontos do Slide*/
+
+selector {
+  --dot-size: 20px;
+  --line-color: rgba(255, 255, 255, 0.25);
+  --dot-color: rgba(255, 255, 255, 0.5);
+  --dot-color-active: rgba(255, 255, 255, 1);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 5%;
+  z-index: 10;
+}
+selector .s-dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background-color: var(--dot-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+selector .s-dot.active {
+  background-color: var(--dot-color-active);
+  transform: scale(1.2);
+}
+
+/*Animação de transição dos slides*/
+selector {
+  position: relative;
+}
+
+selector > * {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+selector > *.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/*Carrosel / Slides*/
+
+selector {
+  width: 100%;
+}
+
+selector .swiper-slide {
+  opacity: 0.5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+selector .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.05);
+}
