@@ -1,0 +1,71 @@
+/* Estilos Principais da Div Fixa */
+#div-fixa {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Alinha o botão no canto inferior direito */
+  margin: 10px 20px;
+  background: rgb(89, 245, 122);
+  width: 230px;
+  height: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden; /* Esconde o texto quando o botão encolhe */
+  transition: 0.5s ease;
+  z-index: 9999;
+}
+
+/* Estado Encolhido (adicionado pelo JS) */
+#div-fixa.shrink {
+  width: 50px;
+  transition: 0.5s ease;
+}
+
+/* Estilos dos Itens Internos */
+#div-fixa .flex-itens {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#div-fixa img {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+#div-fixa span {
+  display: block;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #040605;
+  margin-left: 10px;
+  min-width: 170px; /* Impede a quebra de linha durante o encolhimento */
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+/* Classe de Aparição do Texto */
+#div-fixa span.aparecer {
+  opacity: 1;
+}
+
+/* Animação Flutuante */
+.flutuar {
+  animation-name: flutuar;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes flutuar {
+  from {
+    transform: translate3d(0, 0, 0);
+    filter: brightness(100%);
+  }
+  to {
+    transform: translate3d(0, -15px, 0);
+    filter: brightness(150%);
+  }
+}

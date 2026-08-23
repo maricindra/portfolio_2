@@ -12,13 +12,13 @@
   <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1">
   <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
   <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
-  <link rel="stylesheet" href="css/card.css"
+  <link rel="stylesheet" href="css/card.css">
+  <link rel="stylesheet" href="css/whatsapp.css">
  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    </head>
-
-
 <body>
+  <script src="whatsapp-link.js"></script>
 
   <div class="main-container">
     <!-- Barra Lateral (Aside) -->
@@ -192,10 +192,13 @@
               <p><strong>Linkedin:</strong> <a href="https://linkedin.com/in/marinacindra" target="_blank"> marinacindra</a></p><br>
               <p><strong>GitHub:</strong> <a href="https://github.com/MariCindra" target="_blank"> MariCindra</a></p><br>
         </div>
+        <!-- Botão Flutuante Lateral do WhatsApp -->
+
       </section>
 
     </div>
   </div>
+
 
   <!-- Painel do Style Switcher (Seletor de Temas e Cores) ------------------------------>
  <div class="style-switcher">
@@ -212,9 +215,26 @@
       <span class="color-3" onclick="setActiveStyle('color-3')"></span>
     </div>
   </div>
-  
 
+
+<!-- Estrutura do Botão do WhatsApp -->
+  <div id="div-fixa" class="flutuar" data-shrink="yes">
+    <a href="https://wa.me/5500000000000" target="_blank">
+      <div class="flex-itens">
+        <img src="whatsapp-icon.png" alt="Chamar no WhatsApp">
+        <span>Converse conosco</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Script e Final do Body -->
   <script src="js/script.js"></script>
-  <script src="js/style-switcher.js"></script>
- </body>
+
+
+
+
+</body>
+
+
+
 </html>

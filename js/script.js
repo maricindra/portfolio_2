@@ -61,5 +61,20 @@ cards.forEach((card) => {
     
     // Adiciona a classe 'active' apenas no card em que o mouse entrou
     card.classList.add('active');
+  });}
+);
+
+// 5. Menu Nav Toggler (Menu Mobile)
+const navTogglerBtn = document.querySelector(".nav-toggler"); // Ajuste a classe se o seu botão tiver outro nome
+const aside = document.querySelector(".aside"); // Ajuste a classe para a sua barra lateral/menu
+
+if (navTogglerBtn && aside) {
+  navTogglerBtn.addEventListener("click", () => {
+    asideSectionTogglerBtn();
   });
-});
+}
+
+function asideSectionTogglerBtn() {
+  aside.classList.toggle("open");
+  navTogglerBtn.classList.toggle("open");
+}
