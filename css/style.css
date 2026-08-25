@@ -271,7 +271,7 @@ ul {
 }
 
 /* ==========================================================================
-   Seção Home
+   Seção Home + TITULOS do service
    ========================================================================== */
 .home {
   min-height: 100vh;
@@ -306,7 +306,7 @@ h3.my-profession {
   border-right: 2px solid currentColor; /* Cor do cursor acompanha a cor do texto */
   white-space: pre-wrap; /* Mantém quebras de linha e espaçamentos */
   animation: type_key 0.7s infinite;
-  
+
 }@keyframes Type_key {
   0%, 100% { border-color: transparent; }
   50% { border-color: currentColor; }
@@ -334,6 +334,132 @@ h3.my-profession {
   max-width: 100%;
 }
 
+
+
+/* ==========================================
+   TIMELINE - Experiencias
+   ========================================== */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+}
+
+.timeline__event {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 24px;
+  position: relative;
+  align-items: center;
+  width: 100%;
+}
+
+/* Ícone com a linha vertical */
+.timeline__event__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-black-900);
+  background: var(--skin-color);
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  box-shadow: 0 10px 25px -5px rgba(50, 50, 93, 0.25);
+  position: relative;
+  z-index: 2;
+  margin-right: 25px;
+}
+
+.timeline__event__icon i {
+  font-size: 24px;
+}
+
+/* Linha vertical conectando os ícones */
+.timeline__event__icon:before {
+  content: "";
+  width: 2px;
+  height: calc(100% + 24px);
+  background: var(--skin-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.timeline__event:last-child .timeline__event__icon:before {
+  display: none;
+}
+
+/* Container de Conteúdo + Data */
+.timeline__event__content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: var(--bg-black-100); /* 👈 Troque #fff por var(--bg-black-100) */
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.timeline__event__squad {
+  color: var(--bg-black-900);
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: var(--skin-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 20px 30px;
+  min-width: 160px;
+  text-align: center;
+  
+}
+
+.timeline__event__description {
+  padding: 20px 25px;
+  flex-grow: 1;
+ 
+}
+
+.timeline__event__title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--skin-color);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+
+/* Estilização correta do texto da descrição */
+.timeline p {
+  color: #302e4d ; /* 👈 Adicione !important caso haja conflito */
+}
+
+.timeline .p_date{
+  color: var(--skin-color)
+}
+
+/* Ajuste Responsivo Mobile */
+@media (max-width: 600px) {
+  .timeline__event__content {
+    flex-direction: column;
+  }
+  
+  .timeline__event__squad {
+    width: 100%;
+    padding: 10px;
+  }
+}
 /* ==========================================
    STYLE SWITCHER (Painel de Temas)
    ========================================== */
@@ -411,6 +537,83 @@ h3.my-profession {
 .style-switcher .color-1 { background: #00BBFC; }
 .style-switcher .color-2 { background: #0004FC; }
 .style-switcher .color-3 { background: #8B00FC; }
+
+
+
+
+/* Linha vertical que conecta os ícones */
+.timeline__event__icon:before {
+  content: "";
+  width: 2px;
+  height: calc(100% + 24px);
+  background: var(--skin-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+/* Remove a linha vertical do último item */
+.timeline__event:last-child .timeline__event__icon:before {
+  display: none;
+}
+
+/* Container de Conteúdo + Data */
+.timeline__event__content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.timeline__event__squad {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: var(--skin-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 20px 30px;
+  min-width: 160px;
+}
+
+.timeline__event__description {
+  padding: 20px 25px;
+  flex-grow: 1;
+}
+
+.timeline__event__title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--skin-color);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* Ajuste Responsivo para Celular */
+@media (max-width: 600px) {
+  .timeline__event__content {
+    flex-direction: column;
+  }
+  
+  .timeline__event__squad {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+
+
+
+
 
 /* ==========================================
    AJUSTES PARA MODO RESPONSIVO (MOBILE)
