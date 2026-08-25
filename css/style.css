@@ -306,6 +306,7 @@ h3.my-profession {
   border-right: 2px solid currentColor; /* Cor do cursor acompanha a cor do texto */
   white-space: pre-wrap; /* Mantém quebras de linha e espaçamentos */
   animation: type_key 0.7s infinite;
+  
 }@keyframes Type_key {
   0%, 100% { border-color: transparent; }
   50% { border-color: currentColor; }
