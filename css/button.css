@@ -46,5 +46,5 @@
 
 .magnetic-btn:hover {
   color: white;
-  box-shadow: 0 0 35px rgba(0, 153, 255, 0.7);
+  box-shadow: 0 0 35px var(--skin-color);
 }
