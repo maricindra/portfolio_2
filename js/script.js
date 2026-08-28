@@ -78,3 +78,21 @@ function asideSectionTogglerBtn() {
   aside.classList.toggle("open");
   navTogglerBtn.classList.toggle("open");
 }
+
+// 4. Efeito Hover em contact
+const contacts = document.querySelectorAll('.contact');
+
+contacts.forEach((contact) => {
+  contact.addEventListener('mouseenter', () => {
+    // 1. Remove a classe 'active' de todos os contatos
+    contacts.forEach((item) => item.classList.remove('active'));
+    
+    // 2. Adiciona a classe 'active' apenas no que o mouse entrou
+    contact.classList.add('active');
+  });
+  contacts.forEach((contact) => {
+  contact.addEventListener('mouseleave', () => {
+    contact.classList.remove('active');
+  });
+});
+});
