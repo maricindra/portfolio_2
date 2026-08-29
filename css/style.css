@@ -123,49 +123,6 @@ ul {
   margin-top: 8px;
 }
 
-.contact{
-  color: var(--skin-color);
-}
-
-.contact svg{
-  width: 50px;
-  border-radius: 25px;
-  box-shadow: 0 10px 15px var(--skin-color);
-  padding: 10px;
- 
-}
-/* 1. Animação individual ao passar o mouse (Hover) */
-.contact-icon:hover {
-  transform: translateY(-15px);
-  filter: drop-shadow(0 10px 15px var(--skin-color));
-}
-
-/* 2. Se a classe .active estiver no container (.contact) e mover TODOS os ícones */
- .contact-icon {
-  border-color: var(--skin-color);
-  box-shadow: 0 10px 40px var(--skin-color);
-}
-
-/* 3. Se a classe .active for adicionada em UM ícone específico */
-.contact-icon.active {
-  border-color: var(--skin-color);
-  box-shadow: 0 10px 40px var(--skin-color);
-}
-
-.contact .space{
-padding: 10px;
-}
-
-.contact a{
-  color:var(--skin-color)
-}
-
-.contact a:active{
-  background-color: var(--skin-color);
-  color: #e8dfec;
-}
-
-
 /* ==========================================================================
    Barra Lateral (Aside)
    ========================================================================== */
@@ -331,6 +288,7 @@ padding: 10px;
 h3.hello {
   font-size: 28px;
   margin: 15px 0;
+  
 }
 
 h3.hello .name {
@@ -338,11 +296,14 @@ h3.hello .name {
   font-size: 38px;
   font-weight: 700;
   color: var(--skin-color);
+
 }
 
 h3.my-profession {
   font-size: 30px;
   margin: 15px 0;
+
+
 }
 
 .typing {
@@ -362,6 +323,7 @@ h3.my-profession {
   line-height: 25px;
   color: var(--text-black-700);
   margin-bottom: 25px;
+
 }
 
 .home .home-img {
@@ -645,6 +607,50 @@ box-shadow: 0 10px 40px var(--skin-color);
   letter-spacing: 1px;
   margin-bottom: 8px;
 }
+
+
+.contact{
+  color: var(--skin-color);
+}
+
+.contact svg{
+  width: 50px;
+  border-radius: 25px;
+  box-shadow: 0 10px 15px var(--skin-color);
+  padding: 10px;
+ 
+}
+/* 1. Animação individual ao passar o mouse (Hover) */
+.contact-icon:hover {
+  transform: translateY(-15px);
+  filter: drop-shadow(0 10px 15px var(--skin-color));
+}
+
+/* 2. Se a classe .active estiver no container (.contact) e mover TODOS os ícones */
+ .contact-icon {
+  border-color: var(--skin-color);
+  box-shadow: 0 10px 40px var(--skin-color);
+}
+
+/* 3. Se a classe .active for adicionada em UM ícone específico */
+.contact-icon.active {
+  border-color: var(--skin-color);
+  box-shadow: 0 10px 40px var(--skin-color);
+}
+
+.contact .space{
+padding: 10px;
+}
+
+.contact a{
+  color:var(--skin-color)
+}
+
+.contact a:active{
+  background-color: var(--skin-color);
+  color: #e8dfec;
+}
+
 
 /* Ajuste Responsivo para Celular */
 @media (max-width: 600px) {
